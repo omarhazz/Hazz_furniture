@@ -9,7 +9,7 @@
       margin: 0;
       font-family: 'Segoe UI', Tahoma, sans-serif;
       direction: rtl;
-      background: #2c2f33; /* رمادي داكن أنيق */
+      background: #2c2f33; /* خلفية داكنة */
       color: #e0dcdc;
     }
     header {
@@ -19,88 +19,92 @@
       text-align: center;
       border-bottom: 2px solid #7289da;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.2em;
-    }
+    header h1 { margin: 0; font-size: 2em; }
     nav a {
       color: #e0dcdc;
       margin: 0 15px;
       text-decoration: none;
       font-weight: 600;
-      transition: color 0.3s;
     }
-    nav a:hover {
-      color: #7289da;
-    }
-    .container {
-      width: 95%;
-      max-width: 1200px;
-      margin: 30px auto;
-    }
+    nav a:hover { color: #7289da; }
+
+    .container { width: 95%; margin: 20px auto; }
+
     section h2 {
-      font-size: 1.8em;
+      font-size: 1.6em;
       border-bottom: 3px solid #7289da;
       display: inline-block;
-      padding-bottom: 5px;
       margin-bottom: 15px;
     }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 20px;
-    }
-    .product {
+
+    /* Slider */
+    .slider {
       position: relative;
-      border-radius: 10px;
+      max-width: 1000px;
+      margin: auto;
       overflow: hidden;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.4);
     }
-    .product img {
-      display: block;
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      transition: transform 0.5s;
-    }
-    .product:hover img {
-      transform: scale(1.05);
-    }
-    .overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(35,39,42, 0.8);
-      opacity: 0;
+    .slides {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: opacity 0.4s;
+      transition: transform 0.6s ease-in-out;
     }
-    .product:hover .overlay {
-      opacity: 1;
+    .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+      position: relative;
     }
-    .overlay a button {
-      background: #7289da;
-      border: none;
+    .slide img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+    .caption {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.6);
       color: #fff;
-      font-size: 1em;
-      padding: 10px 22px;
+      padding: 8px 14px;
       border-radius: 5px;
+      font-size: 16px;
+    }
+    /* أزرار التنقل */
+    .prev, .next {
       cursor: pointer;
-      transition: background 0.3s;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: auto;
+      padding: 12px;
+      margin-top: -22px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 20px;
+      transition: 0.3s;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      background: rgba(0,0,0,0.4);
     }
-    .overlay a button:hover {
-      background: #5b6eae;
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
     }
+    .prev:hover, .next:hover {
+      background: rgba(0,0,0,0.7);
+    }
+
+    /* أيقونات التواصل */
     .contact-icons {
-      margin-top: 20px;
+      margin-top: 30px;
       text-align: center;
     }
     .contact-icons a img {
-      width: 45px;
-      height: 45px;
-      margin: 0 10px;
+      width: 42px;
+      height: 42px;
+      margin: 0 8px;
       filter: invert(100%) sepia(0%) saturate(0%);
       transition: transform 0.3s, filter 0.3s;
     }
@@ -108,12 +112,13 @@
       transform: scale(1.2);
       filter: invert(56%) sepia(91%) saturate(339%) hue-rotate(213deg) brightness(93%) contrast(100%);
     }
+
     footer {
       background: #23272a;
       color: #aaa;
       text-align: center;
-      padding: 18px 0;
-      margin-top: 40px;
+      padding: 14px;
+      margin-top: 30px;
     }
   </style>
 </head>
@@ -121,34 +126,47 @@
   <header>
     <h1>صالونات حظ للأثاث</h1>
     <nav>
-      <a href="#products">الصالونات</a>
+      <a href="#slider">الصالونات</a>
       <a href="#contact">تواصل معنا</a>
     </nav>
   </header>
 
   <main class="container">
-    <section id="products">
+    <section id="slider">
       <h2>معرض الصالونات</h2>
-      <div class="products">
-        <!-- صالون تجريبي -->
-        <div class="product">
-          <img src="https://via.placeholder.com/300x200.png?text=صالون+1" alt="صالون 1"/>
-          <div class="overlay"><a href="salon1.html"><button>عرض التفاصيل</button></a></div>
+      <div class="slider">
+        <div class="slides">
+          <!-- صورة 1 -->
+          <div class="slide">
+            <img src="https://images.unsplash.com/photo-1616627988021-8b08c3c6d1e0?auto=format&fit=crop&w=1000&q=60" alt="صالون 1">
+            <div class="caption"><a href="salon1.html" style="color:#fff; text-decoration:none;">عرض التفاصيل</a></div>
+          </div>
+          <!-- صورة 2 -->
+          <div class="slide">
+            <img src="https://images.unsplash.com/photo-1615874959474-d609d8a9b56a?auto=format&fit=crop&w=1000&q=60" alt="صالون 2">
+            <div class="caption"><a href="salon2.html" style="color:#fff; text-decoration:none;">عرض التفاصيل</a></div>
+          </div>
+          <!-- صورة 3 -->
+          <div class="slide">
+            <img src="https://images.unsplash.com/photo-1615874969710-fb7a63a48a73?auto=format&fit=crop&w=1000&q=60" alt="صالون 3">
+            <div class="caption"><a href="salon3.html" style="color:#fff; text-decoration:none;">عرض التفاصيل</a></div>
+          </div>
+          <!-- صورة 4 -->
+          <div class="slide">
+            <img src="https://images.unsplash.com/photo-1616628188948-9ab0b20fbf8a?auto=format&fit=crop&w=1000&q=60" alt="صالون 4">
+            <div class="caption"><a href="salon4.html" style="color:#fff; text-decoration:none;">عرض التفاصيل</a></div>
+          </div>
         </div>
-        <div class="product">
-          <img src="https://via.placeholder.com/300x200.png?text=صالون+2" alt="صالون 2"/>
-          <div class="overlay"><a href="salon2.html"><button>عرض التفاصيل</button></a></div>
-        </div>
-        <div class="product">
-          <img src="https://via.placeholder.com/300x200.png?text=صالون+3" alt="صالون 3"/>
-          <div class="overlay"><a href="salon3.html"><button>عرض التفاصيل</button></a></div>
-        </div>
-        <!-- تقدر تضيف كمان -->
+        <!-- أزرار التنقل -->
+        <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+        <a class="next" onclick="moveSlide(1)">&#10095;</a>
       </div>
     </section>
 
     <section id="contact">
       <h2>تواصل معنا</h2>
+      <p>📞 01069977092 | 📞 01068831118</p>
+      <p>📍 دمياط - معرض الأثاث</p>
       <div class="contact-icons">
         <a href="https://www.facebook.com/share/14QxR5YmLgx/?mibextid=wwXIfr" target="_blank">
           <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"/>
@@ -163,5 +181,26 @@
   <footer>
     <p>© 2025 معرض حظ للأثاث — جميع الحقوق محفوظة</p>
   </footer>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slide').length;
+
+    function showSlide(index) {
+      if (index >= totalSlides) slideIndex = 0;
+      else if (index < 0) slideIndex = totalSlides - 1;
+      else slideIndex = index;
+
+      slides.style.transform = 'translateX(' + (-slideIndex * 100) + '%)';
+    }
+
+    function moveSlide(step) {
+      showSlide(slideIndex + step);
+    }
+
+    // تشغيل تلقائي
+    setInterval(() => { moveSlide(1); }, 4000);
+  </script>
 </body>
 </html>
