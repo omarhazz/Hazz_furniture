@@ -49,4 +49,98 @@
       padding: 14px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      text-align
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .product:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
+    .product img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .contact-icons {
+      margin-top: 12px;
+    }
+    .contact-icons a img {
+      width: 40px;
+      height: 40px;
+      margin: 0 8px;
+      transition: transform 0.2s;
+    }
+    .contact-icons a img:hover {
+      transform: scale(1.2);
+    }
+    footer {
+      background: linear-gradient(90deg, #4e342e, #000); /* بني -> أسود */
+      color: #fff;
+      text-align: center;
+      padding: 14px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>حظ للأثاث - Hazz Furniture</h1>
+    <nav>
+      <a href="#home">الرئيسية</a>
+      <a href="#products">المنتجات</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="home">
+      <h2>أهلاً بكم في معرض حظ للأثاث</h2>
+      <p style="font-size:18px;">أجود أنواع الأثاث الدمياطي بأفضل الأسعار.</p>
+    </section>
+
+    <section id="products" style="margin-top:18px">
+      <h2>منتجاتنا</h2>
+      <div class="products">
+        <!-- صور تجريبية -->
+        <div class="product">
+          <img src="https://via.placeholder.com/300x160.png?text=كنبة" alt="كنبة فاخرة" />
+          <h3>كنبة فاخرة</h3>
+          <p>السعر: 5000 جنيه</p>
+        </div>
+
+        <div class="product">
+          <img src="https://via.placeholder.com/300x160.png?text=ترابيزة" alt="ترابيزة خشب" />
+          <h3>ترابيزة خشب طبيعي</h3>
+          <p>السعر: 2500 جنيه</p>
+        </div>
+
+        <div class="product">
+          <img src="https://via.placeholder.com/300x160.png?text=سرير" alt="سرير مودرن" />
+          <h3>سرير مودرن</h3>
+          <p>السعر: 7000 جنيه</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:18px">
+      <h2>تواصل معنا</h2>
+      <p>📞 01069977092 | 📞 01068831118</p>
+      <p>📍 دمياط - معرض الأثاث</p>
+      <div class="contact-icons">
+        <!-- أيقونة فيسبوك -->
+        <a href="https://www.facebook.com/share/14QxR5YmLgx/?mibextid=wwXIfr" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook" />
+        </a>
+        <!-- أيقونة واتساب -->
+        <a href="https://wa.me/201069977092" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/145/145804.png" alt="WhatsApp" />
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 - معرض حظ للأثاث - Hazz Furniture</p>
+  </footer>
+</body>
+</html>
