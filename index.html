@@ -1,206 +1,140 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>صالونات حظ للأثاث - Hazz Furniture</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>معرض صالونات حظ للأثاث</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, sans-serif;
       direction: rtl;
-      background: #2c2f33; /* خلفية داكنة */
-      color: #e0dcdc;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      background: #111;
+      color: #fff;
     }
     header {
-      background: #23272a;
-      color: #f5f5f5;
-      padding: 25px 10px;
-      text-align: center;
-      border-bottom: 2px solid #7289da;
-    }
-    header h1 { margin: 0; font-size: 2em; }
-    nav a {
-      color: #e0dcdc;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    nav a:hover { color: #7289da; }
-
-    .container { width: 95%; margin: 20px auto; }
-
-    section h2 {
-      font-size: 1.6em;
-      border-bottom: 3px solid #7289da;
-      display: inline-block;
-      margin-bottom: 15px;
-    }
-
-    /* Slider */
-    .slider {
-      position: relative;
-      max-width: 1000px;
-      margin: auto;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.4);
-    }
-    .slides {
-      display: flex;
-      transition: transform 0.6s ease-in-out;
-    }
-    .slide {
-      min-width: 100%;
-      box-sizing: border-box;
-      position: relative;
-    }
-    .slide img {
+      position: fixed;
+      top: 0;
       width: 100%;
-      height: 500px;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      z-index: 1000;
+    }
+    header h1 { margin: 0; font-size: 22px; }
+
+    section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    section img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transform: scale(1.1);
+      transition: opacity 1s ease-in-out, transform 1.5s ease-in-out;
+    }
+    section.visible img {
+      opacity: 1;
+      transform: scale(1);
     }
     .caption {
-      position: absolute;
-      bottom: 15px;
-      left: 50%;
-      transform: translateX(-50%);
+      position: relative;
+      z-index: 2;
       background: rgba(0,0,0,0.6);
       color: #fff;
-      padding: 8px 14px;
-      border-radius: 5px;
-      font-size: 16px;
-    }
-    /* أزرار التنقل */
-    .prev, .next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: auto;
-      padding: 12px;
-      margin-top: -22px;
-      color: #fff;
-      font-weight: bold;
-      font-size: 20px;
-      transition: 0.3s;
-      border-radius: 0 3px 3px 0;
-      user-select: none;
-      background: rgba(0,0,0,0.4);
-    }
-    .next {
-      right: 0;
-      border-radius: 3px 0 0 3px;
-    }
-    .prev:hover, .next:hover {
-      background: rgba(0,0,0,0.7);
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-size: 18px;
     }
 
-    /* أيقونات التواصل */
-    .contact-icons {
-      margin-top: 30px;
+    /* تواصل معنا */
+    .contact {
+      padding: 50px 20px;
       text-align: center;
+      background: #23272a;
+      color: #fff;
     }
-    .contact-icons a img {
+    .contact a img {
       width: 42px;
       height: 42px;
       margin: 0 8px;
-      filter: invert(100%) sepia(0%) saturate(0%);
-      transition: transform 0.3s, filter 0.3s;
+      filter: invert(100%);
+      transition: transform 0.3s;
     }
-    .contact-icons a img:hover {
-      transform: scale(1.2);
-      filter: invert(56%) sepia(91%) saturate(339%) hue-rotate(213deg) brightness(93%) contrast(100%);
-    }
-
-    footer {
-      background: #23272a;
-      color: #aaa;
-      text-align: center;
-      padding: 14px;
-      margin-top: 30px;
-    }
+    .contact a img:hover { transform: scale(1.2); }
   </style>
 </head>
 <body>
+
   <header>
     <h1>صالونات حظ للأثاث</h1>
-    <nav>
-      <a href="#slider">الصالونات</a>
-      <a href="#contact">تواصل معنا</a>
-    </nav>
   </header>
 
-  <main class="container">
-    <section id="slider">
-      <h2>معرض الصالونات</h2>
-      <div class="slider">
-        <div class="slides">
-          <!-- صورة 1 -->
-          <div class="slide">
-            <img src="https://images.unsplash.com/photo-1616627988021-8b08c3c6d1e0?auto=format&fit=crop&w=1000&q=60" alt="صالون 1">
-            <div class="caption"><a href="salon1.html" style="color:#fff; text-decoration:none;">عرض التفاصيل</a></div>
-          </div>
-          <!-- صورة 2 -->
-          <div class="slide">
-            <img src="https://images.unsplash.com/photo-1615874959474-d609d8a9b56a?auto=format&fit=crop&w=1000&q=60" alt="صالون 2">
-            <div class="caption"><a href="salon2.html" style="color:#fff; text-decoration:none;">عرض التفاصيل</a></div>
-          </div>
-          <!-- صورة 3 -->
-          <div class="slide">
-            <img src="https://images.unsplash.com/photo-1615874969710-fb7a63a48a73?auto=format&fit=crop&w=1000&q=60" alt="صالون 3">
-            <div class="caption"><a href="salon3.html" style="color:#fff; text-decoration:none;">عرض التفاصيل</a></div>
-          </div>
-          <!-- صورة 4 -->
-          <div class="slide">
-            <img src="https://images.unsplash.com/photo-1616628188948-9ab0b20fbf8a?auto=format&fit=crop&w=1000&q=60" alt="صالون 4">
-            <div class="caption"><a href="salon4.html" style="color:#fff; text-decoration:none;">عرض التفاصيل</a></div>
-          </div>
-        </div>
-        <!-- أزرار التنقل -->
-        <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
-        <a class="next" onclick="moveSlide(1)">&#10095;</a>
-      </div>
-    </section>
+  <!-- صورة 1 -->
+  <section>
+    <img src="https://images.unsplash.com/photo-1616627988021-8b08c3c6d1e0?auto=format&fit=crop&w=1200&q=60" alt="صالون 1">
+    <div class="caption">صالون مودرن فاخر - عرض التفاصيل</div>
+  </section>
 
-    <section id="contact">
-      <h2>تواصل معنا</h2>
-      <p>📞 01069977092 | 📞 01068831118</p>
-      <p>📍 دمياط - معرض الأثاث</p>
-      <div class="contact-icons">
-        <a href="https://www.facebook.com/share/14QxR5YmLgx/?mibextid=wwXIfr" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"/>
-        </a>
-        <a href="https://wa.me/201069977092" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"/>
-        </a>
-      </div>
-    </section>
-  </main>
+  <!-- صورة 2 -->
+  <section>
+    <img src="https://images.unsplash.com/photo-1615874959474-d609d8a9b56a?auto=format&fit=crop&w=1200&q=60" alt="صالون 2">
+    <div class="caption">صالون كلاسيك مميز - عرض التفاصيل</div>
+  </section>
 
-  <footer>
-    <p>© 2025 معرض حظ للأثاث — جميع الحقوق محفوظة</p>
-  </footer>
+  <!-- صورة 3 -->
+  <section>
+    <img src="https://images.unsplash.com/photo-1615874969710-fb7a63a48a73?auto=format&fit=crop&w=1200&q=60" alt="صالون 3">
+    <div class="caption">صالون ذهبي أنيق - عرض التفاصيل</div>
+  </section>
+
+  <!-- صورة 4 -->
+  <section>
+    <img src="https://images.unsplash.com/photo-1616628188948-9ab0b20fbf8a?auto=format&fit=crop&w=1200&q=60" alt="صالون 4">
+    <div class="caption">صالون ملكي فاخر - عرض التفاصيل</div>
+  </section>
+
+  <!-- تواصل معنا -->
+  <div class="contact">
+    <h2>تواصل معنا</h2>
+    <p>📞 01069977092 | 📞 01068831118</p>
+    <a href="https://www.facebook.com/share/14QxR5YmLgx/?mibextid=wwXIfr" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"/>
+    </a>
+    <a href="https://wa.me/201069977092" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"/>
+    </a>
+  </div>
 
   <script>
-    let slideIndex = 0;
-    const slides = document.querySelector('.slides');
-    const totalSlides = document.querySelectorAll('.slide').length;
+    // إظهار الصور بشكل متدرج أثناء السحب
+    const sections = document.querySelectorAll("section");
+    const options = { threshold: 0.5 };
 
-    function showSlide(index) {
-      if (index >= totalSlides) slideIndex = 0;
-      else if (index < 0) slideIndex = totalSlides - 1;
-      else slideIndex = index;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("visible");
+        }
+      });
+    }, options);
 
-      slides.style.transform = 'translateX(' + (-slideIndex * 100) + '%)';
-    }
-
-    function moveSlide(step) {
-      showSlide(slideIndex + step);
-    }
-
-    // تشغيل تلقائي
-    setInterval(() => { moveSlide(1); }, 4000);
+    sections.forEach(section => {
+      observer.observe(section);
+    });
   </script>
+
 </body>
 </html>
