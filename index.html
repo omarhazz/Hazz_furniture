@@ -49,14 +49,31 @@
       opacity: 1;
       transform: scale(1);
     }
+
+    /* زرار التفاصيل */
     .caption {
-      position: relative;
-      z-index: 2;
-      background: rgba(0,0,0,0.6);
+      position: absolute;
+      bottom: 20px;
+      right: 50%;
+      transform: translateX(50%);
+      background: rgba(0,0,0,0.7);
       color: #fff;
       padding: 12px 20px;
       border-radius: 6px;
       font-size: 18px;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    section:hover .caption {
+      opacity: 1;
+    }
+    .caption a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .caption a:hover {
+      text-decoration: underline;
     }
 
     /* تواصل معنا */
@@ -85,25 +102,19 @@
   <!-- صورة 1 -->
   <section>
     <img src="https://images.unsplash.com/photo-1616627988021-8b08c3c6d1e0?auto=format&fit=crop&w=1200&q=60" alt="صالون 1">
-    <div class="caption">صالون مودرن فاخر - عرض التفاصيل</div>
+    <div class="caption"><a href="salon1.html">عرض التفاصيل</a></div>
   </section>
 
   <!-- صورة 2 -->
   <section>
     <img src="https://images.unsplash.com/photo-1615874959474-d609d8a9b56a?auto=format&fit=crop&w=1200&q=60" alt="صالون 2">
-    <div class="caption">صالون كلاسيك مميز - عرض التفاصيل</div>
+    <div class="caption"><a href="salon2.html">عرض التفاصيل</a></div>
   </section>
 
   <!-- صورة 3 -->
   <section>
     <img src="https://images.unsplash.com/photo-1615874969710-fb7a63a48a73?auto=format&fit=crop&w=1200&q=60" alt="صالون 3">
-    <div class="caption">صالون ذهبي أنيق - عرض التفاصيل</div>
-  </section>
-
-  <!-- صورة 4 -->
-  <section>
-    <img src="https://images.unsplash.com/photo-1616628188948-9ab0b20fbf8a?auto=format&fit=crop&w=1200&q=60" alt="صالون 4">
-    <div class="caption">صالون ملكي فاخر - عرض التفاصيل</div>
+    <div class="caption"><a href="salon3.html">عرض التفاصيل</a></div>
   </section>
 
   <!-- تواصل معنا -->
