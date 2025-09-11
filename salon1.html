@@ -3,58 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>صالون مودرن فاخر - Hazz Furniture</title>
+  <title>تفاصيل صالون مودرن فاخر - Hazz Furniture</title>
   <style>
     body {
       margin: 0;
-      font-family: Tahoma, sans-serif;
-      background: #f9f9f9;
-      color: #333;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #111;
+      color: #fff;
       direction: rtl;
+      overflow-x: hidden;
+    }
+    header {
+      background: rgba(0,0,0,0.85);
       padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    h1 { color: #444; }
-    .gallery {
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+      color: #f9c74f;
+    }
+    .info {
+      padding: 20px;
+      background: #1a1a1a;
+      line-height: 1.7;
+    }
+    .info p { margin: 8px 0; }
+    .status {
+      font-weight: bold;
+      color: #06d6a0;
+    }
+    .not-available {
+      color: #ef476f;
+      font-weight: bold;
+    }
+
+    section {
+      height: 100vh;
       display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 20px;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
     }
-    .gallery img {
-      width: 300px;
-      height: 200px;
+    section img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transform: scale(1.1);
+      transition: opacity 1s ease-in-out, transform 1.5s ease-in-out;
     }
-    .price {
-      font-size: 20px;
-      color: #b8860b;
-      margin-top: 15px;
+    section.visible img {
+      opacity: 1;
+      transform: scale(1);
     }
+
     a.back {
       display: inline-block;
-      margin-top: 20px;
+      margin: 20px;
       padding: 10px 14px;
       background: #333;
       color: #fff;
       border-radius: 6px;
       text-decoration: none;
     }
+    a.back:hover {
+      background: #555;
+    }
   </style>
 </head>
 <body>
-  <h1>صالون مودرن فاخر</h1>
-  <p>صالون مودرن مميز مصنوع من أجود أنواع الخشب وقماش عالي الجودة.</p>
 
-  <div class="gallery">
-    <img src="https://via.placeholder.com/300x200.png?text=صالون+1A" alt="صالون 1">
-    <img src="https://via.placeholder.com/300x200.png?text=صالون+1B" alt="صالون 1">
-    <img src="https://via.placeholder.com/300x200.png?text=صالون+1C" alt="صالون 1">
+  <header>
+    <h1>صالون مودرن فاخر</h1>
+  </header>
+
+  <!-- تفاصيل المنتج -->
+  <div class="info">
+    <p>✨ <strong>الوصف:</strong> صالون مودرن مميز مصنوع من أجود أنواع الخشب وقماش عالي الجودة.</p>
+    <p>💰 <strong>السعر:</strong> 15,000 جنيه</p>
+    <p>📦 <strong>الحالة:</strong> <span class="status">متوفر حالياً</span></p>
   </div>
 
-  <p class="price">💰 السعر: 15,000 جنيه</p>
+  <!-- صور الصالون -->
+  <section>
+    <img src="https://images.unsplash.com/photo-1616627988021-8b08c3c6d1e0?auto=format&fit=crop&w=1200&q=60" alt="صالون 1">
+  </section>
 
+  <section>
+    <img src="https://images.unsplash.com/photo-1615874959474-d609d8a9b56a?auto=format&fit=crop&w=1200&q=60" alt="صالون 1">
+  </section>
+
+  <section>
+    <img src="https://images.unsplash.com/photo-1615874969710-fb7a63a48a73?auto=format&fit=crop&w=1200&q=60" alt="صالون 1">
+  </section>
+
+  <!-- زر رجوع -->
   <a href="index.html" class="back">⬅ رجوع للصفحة الرئيسية</a>
+
+  <script>
+    // نفس الحركة بتاعة الصور المتدرجة
+    const sections = document.querySelectorAll("section");
+    const options = { threshold: 0.5 };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("visible");
+        }
+      });
+    }, options);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+
 </body>
 </html>
