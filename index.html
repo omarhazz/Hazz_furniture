@@ -11,41 +11,43 @@
       background: linear-gradient(135deg, #000000, #333333);
       color: white;
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     header {
       text-align: center;
-      padding: 20px;
-      background: #111;
+      padding: 30px 20px;
+      background: rgba(0,0,0,0.8);
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
     header h1 {
-      font-size: 2rem;
-      margin-bottom: 5px;
+      font-size: 2.2rem;
+      margin-bottom: 8px;
       color: #f1c40f;
     }
 
     header p {
       margin: 5px 0;
+      font-size: 1.1rem;
     }
 
     nav {
-      margin-top: 10px;
+      margin-top: 15px;
     }
 
     nav a {
       margin: 0 15px;
-      text-decoration: none;
       color: #f1c40f;
+      text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: #ffffff;
+      color: #fff;
     }
 
     .socials {
@@ -58,8 +60,8 @@
     }
 
     .socials img {
-      width: 40px;
-      height: 40px;
+      width: 35px;
+      height: 35px;
       transition: transform 0.3s ease;
     }
 
@@ -69,22 +71,28 @@
 
     .section {
       padding: 40px 20px;
+      text-align: center;
     }
 
     .section h2 {
-      text-align: center;
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin-bottom: 20px;
       color: #f1c40f;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      justify-items: center;
     }
 
     .card {
       position: relative;
       overflow: hidden;
       border-radius: 12px;
-      margin: 20px auto;
-      width: 90%;
-      max-width: 800px;
+      max-width: 300px;
+      width: 100%;
     }
 
     .card img {
@@ -92,6 +100,7 @@
       height: auto;
       display: block;
       transition: transform 0.5s ease;
+      border-radius: 12px;
     }
 
     .card:hover img {
@@ -109,11 +118,12 @@
       align-items: center;
       background: rgba(0, 0, 0, 0.6);
       color: #f1c40f;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       font-weight: bold;
       text-decoration: none;
       opacity: 0;
       transition: opacity 0.4s ease;
+      border-radius: 12px;
     }
 
     .card:hover .details {
@@ -125,96 +135,97 @@
   <header>
     <h1>حظ للأثاث - Hazz Furniture</h1>
     <p>📞 01069977092 | 01068831118</p>
-
     <nav>
-      <a href="#ent">انتريهات</a>
-      <a href="#corner">الركن</a>
+      <a href="#antari">الانتريهات</a>
+      <a href="#corners">الركن</a>
     </nav>
-
     <div class="socials">
       <a href="https://www.facebook.com/share/14QxR5YmLgx/?mibextid=wwXIfr" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" style="filter: none;">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
       </a>
       <a href="https://wa.me/201069977092" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" style="filter: none;">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
       </a>
     </div>
   </header>
 
-  <!-- سكشن الانتريهات -->
-  <div id="ent" class="section">
-    <h2>🛋️ الانتريهات</h2>
-
-    <!-- صالون 1 -->
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=60" alt="صالون 1">
-      <a href="salon1.html" class="details">عرض التفاصيل</a>
-    </div>
-
-    <!-- صالون 2 -->
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1600210488785-8d87cbcb4e07?auto=format&fit=crop&w=800&q=60" alt="صالون 2">
-      <a href="salon2.html" class="details">عرض التفاصيل</a>
-    </div>
-
-    <!-- صالون 3 -->
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=800&q=60" alt="صالون 3">
-      <a href="salon3.html" class="details">عرض التفاصيل</a>
-    </div>
-
-    <!-- صالون 4 -->
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1600210492493-0946911123fc?auto=format&fit=crop&w=800&q=60" alt="صالون 4">
-      <a href="salon4.html" class="details">عرض التفاصيل</a>
-    </div>
-
-    <!-- صالون 5 -->
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=60" alt="صالون 5">
-      <a href="salon5.html" class="details">عرض التفاصيل</a>
-    </div>
-
-    <!-- صالون 6 -->
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1616627985120-6b52ffb62a1c?auto=format&fit=crop&w=800&q=60" alt="صالون 6">
-      <a href="salon6.html" class="details">عرض التفاصيل</a>
-    </div>
-
-    <!-- صالون 7 -->
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=60" alt="صالون 7">
-      <a href="salon7.html" class="details">عرض التفاصيل</a>
-    </div>
-  </div>
-
-  <!-- سكشن الركن -->
-  <div id="corner" class="section">
-    <h2>🛋️ الركن</h2>
-
-    <!-- ركن 1 -->
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1628744445410-537f7e193864?auto=format&fit=crop&w=800&q=60" alt="ركنة 1">
-      <a href="corner1.html" class="details">عرض التفاصيل</a>
-    </div>
-
-    <!-- ركن 2 -->
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1600585154253-9d5c018f0a3c?auto=format&fit=crop&w=800&q=60" alt="ركنة 2">
-      <a href="corner2.html" class="details">عرض التفاصيل</a>
+  <!-- الانتريهات -->
+  <div id="antari" class="section">
+    <h2>الانتريهات</h2>
+    <div class="cards">
+      <!-- صالون 1 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=60" alt="صالون 1">
+        <a href="salon1.html" class="details">عرض التفاصيل</a>
+      </div>
+      <!-- صالون 2 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1600210488785-8d87cbcb4e07?auto=format&fit=crop&w=800&q=60" alt="صالون 2">
+        <a href="salon2.html" class="details">عرض التفاصيل</a>
+      </div>
+      <!-- صالون 3 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=800&q=60" alt="صالون 3">
+        <a href="salon3.html" class="details">عرض التفاصيل</a>
+      </div>
+      <!-- صالون 4 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1600210492493-0946911123fc?auto=format&fit=crop&w=800&q=60" alt="صالون 4">
+        <a href="salon4.html" class="details">عرض التفاصيل</a>
+      </div>
+      <!-- صالون 5 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=60" alt="صالون 5">
+        <a href="salon5.html" class="details">عرض التفاصيل</a>
+      </div>
+      <!-- صالون 6 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=60" alt="صالون 6">
+        <a href="salon6.html" class="details">عرض التفاصيل</a>
+      </div>
+      <!-- صالون 7 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1628744445410-537f7e193864?auto=format&fit=crop&w=800&q=60" alt="صالون 7">
+        <a href="salon7.html" class="details">عرض التفاصيل</a>
+      </div>
+      <!-- صالون 8 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1625712342284-0c27bb1e8f01?auto=format&fit=crop&w=800&q=60" alt="صالون 8">
+        <a href="salon8.html" class="details">عرض التفاصيل</a>
+      </div>
     </div>
   </div>
 
-  <script>
-    // سكريبت للنزول الناعم
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener("click", function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-          behavior: "smooth"
-        });
-      });
-    });
-  </script>
+  <!-- الركن -->
+  <div id="corners" class="section">
+    <h2>الركن</h2>
+    <div class="cards">
+      <!-- ركن 1 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1600585154154-663ca3f5007d?auto=format&fit=crop&w=800&q=60" alt="ركن 1">
+        <a href="corner1.html" class="details">عرض التفاصيل</a>
+      </div>
+      <!-- ركن 2 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1600210488685-8d87cbcb4e07?auto=format&fit=crop&w=800&q=60" alt="ركن 2">
+        <a href="corner2.html" class="details">عرض التفاصيل</a>
+      </div>
+      <!-- ركن 3 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1600210492493-0946911123fc?auto=format&fit=crop&w=800&q=60" alt="ركن 3">
+        <a href="corner3.html" class="details">عرض التفاصيل</a>
+      </div>
+      <!-- ركن 4 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1598300048529-c82d50457a05?auto=format&fit=crop&w=800&q=60" alt="ركن 4">
+        <a href="corner4.html" class="details">عرض التفاصيل</a>
+      </div>
+      <!-- ركن 5 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1585513588844-b1cb8beedab3?auto=format&fit=crop&w=800&q=60" alt="ركن 5">
+        <a href="corner5.html" class="details">عرض التفاصيل</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
