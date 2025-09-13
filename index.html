@@ -11,7 +11,6 @@
       background: linear-gradient(135deg, #000000, #333333);
       color: white;
       overflow-x: hidden;
-      scroll-behavior: smooth; /* يخلي النزول ناعم */
     }
 
     header {
@@ -134,10 +133,10 @@
 
     <div class="socials">
       <a href="https://www.facebook.com/share/14QxR5YmLgx/?mibextid=wwXIfr" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" style="filter: none;">
       </a>
       <a href="https://wa.me/201069977092" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" style="filter: none;">
       </a>
     </div>
   </header>
@@ -146,37 +145,43 @@
   <div id="ent" class="section">
     <h2>🛋️ الانتريهات</h2>
 
-    <!-- 7 صالونات -->
+    <!-- صالون 1 -->
     <div class="card">
       <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=60" alt="صالون 1">
       <a href="salon1.html" class="details">عرض التفاصيل</a>
     </div>
 
+    <!-- صالون 2 -->
     <div class="card">
       <img src="https://images.unsplash.com/photo-1600210488785-8d87cbcb4e07?auto=format&fit=crop&w=800&q=60" alt="صالون 2">
       <a href="salon2.html" class="details">عرض التفاصيل</a>
     </div>
 
+    <!-- صالون 3 -->
     <div class="card">
       <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=800&q=60" alt="صالون 3">
       <a href="salon3.html" class="details">عرض التفاصيل</a>
     </div>
 
+    <!-- صالون 4 -->
     <div class="card">
       <img src="https://images.unsplash.com/photo-1600210492493-0946911123fc?auto=format&fit=crop&w=800&q=60" alt="صالون 4">
       <a href="salon4.html" class="details">عرض التفاصيل</a>
     </div>
 
+    <!-- صالون 5 -->
     <div class="card">
       <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=60" alt="صالون 5">
       <a href="salon5.html" class="details">عرض التفاصيل</a>
     </div>
 
+    <!-- صالون 6 -->
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1600585154154-6630a0f3fae0?auto=format&fit=crop&w=800&q=60" alt="صالون 6">
+      <img src="https://images.unsplash.com/photo-1616627985120-6b52ffb62a1c?auto=format&fit=crop&w=800&q=60" alt="صالون 6">
       <a href="salon6.html" class="details">عرض التفاصيل</a>
     </div>
 
+    <!-- صالون 7 -->
     <div class="card">
       <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=60" alt="صالون 7">
       <a href="salon7.html" class="details">عرض التفاصيل</a>
@@ -187,20 +192,29 @@
   <div id="corner" class="section">
     <h2>🛋️ الركن</h2>
 
+    <!-- ركن 1 -->
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1618213837799-9c1e7e9a0193?auto=format&fit=crop&w=800&q=60" alt="ركنة 1">
+      <img src="https://images.unsplash.com/photo-1628744445410-537f7e193864?auto=format&fit=crop&w=800&q=60" alt="ركنة 1">
       <a href="corner1.html" class="details">عرض التفاصيل</a>
     </div>
 
+    <!-- ركن 2 -->
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1628744445410-537f7e193864?auto=format&fit=crop&w=800&q=60" alt="ركنة 2">
+      <img src="https://images.unsplash.com/photo-1600585154253-9d5c018f0a3c?auto=format&fit=crop&w=800&q=60" alt="ركنة 2">
       <a href="corner2.html" class="details">عرض التفاصيل</a>
     </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1618213895034-937d05e400f4?auto=format&fit=crop&w=800&q=60" alt="ركنة 3">
-      <a href="corner3.html" class="details">عرض التفاصيل</a>
-    </div>
   </div>
+
+  <script>
+    // سكريبت للنزول الناعم
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth"
+        });
+      });
+    });
+  </script>
 </body>
 </html>
