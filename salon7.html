@@ -3,85 +3,123 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>صالون 7 - حظ للأثاث</title>
+  <title>صالون مودرن - Hazz Furniture</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Cairo', sans-serif;
-      background: #f9f9f9;
-      color: #333;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #111;
+      color: #fff;
       direction: rtl;
+      overflow-x: hidden;
     }
 
     header {
-      background: #8B4513;
-      color: #fff;
+      background: rgba(0, 0, 0, 0.9);
       padding: 20px;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2rem;
+      font-size: 22px;
+      color: #f9c74f;
     }
 
-    .container {
-      width: 90%;
-      margin: 20px auto;
-      text-align: center;
+    .info {
+      padding: 20px;
+      background: #1a1a1a;
+      line-height: 1.7;
     }
 
-    .product-img {
-      max-width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    .status {
+      font-weight: bold;
+      color: #06d6a0;
     }
 
-    .details {
-      margin-top: 20px;
+    .not-available {
+      color: #ef476f;
+      font-weight: bold;
     }
 
-    .details h2 {
-      margin-bottom: 10px;
-      color: #8B4513;
+    section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    .details p {
-      font-size: 1.1rem;
-      margin: 5px 0;
+    section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transform: scale(1.1);
+      transition: opacity 1s, transform 1.5s;
     }
 
-    .back-link {
+    section.visible img {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    a.back {
       display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: #8B4513;
+      margin: 20px;
+      padding: 10px 14px;
+      background: #333;
       color: #fff;
+      border-radius: 6px;
       text-decoration: none;
-      border-radius: 5px;
     }
 
-    .back-link:hover {
-      background: #a0522d;
+    a.back:hover {
+      background: #555;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>صالون 7</h1>
-  </header>
+  <header><h1>صالون مودرن</h1></header>
 
-  <div class="container">
-    <img src="https://images.unsplash.com/photo-1600585154207-bcc1f2f92a58?auto=format&fit=crop&w=1000&q=80" alt="صالون 7" class="product-img">
-
-    <div class="details">
-      <h2>صالون مودرن فاخر</h2>
-      <p>السعر: 12,000 جنيه</p>
-      <p>خشب زان أحمر | قماش عالي الجودة</p>
-      <p>مناسب لغرف المعيشة الواسعة والديكورات المودرن.</p>
-    </div>
-
-    <a href="index.html" class="back-link">⬅ الرجوع للرئيسية</a>
+  <div class="info">
+    <p>✨ <strong>الوصف:</strong> صالون مودرن أنيق بتصميم عصري وخامات عالية الجودة.</p>
+    <p>💰 <strong>السعر:</strong> 14,500 جنيه</p>
+    <p>📦 <strong>الحالة:</strong> <span class="status">متوفر حالياً</span></p>
   </div>
+
+  <section>
+    <img src="https://images.unsplash.com/photo-1600585154487-99b2a3f2eacb?auto=format&fit=crop&w=1200&q=60" alt="صالون 7 - صورة 1">
+  </section>
+  <section>
+    <img src="https://images.unsplash.com/photo-1616594039964-a80f53fd5f86?auto=format&fit=crop&w=1200&q=60" alt="صالون 7 - صورة 2">
+  </section>
+  <section>
+    <img src="https://images.unsplash.com/photo-1618213837799-d18bdf63a397?auto=format&fit=crop&w=1200&q=60" alt="صالون 7 - صورة 3">
+  </section>
+
+  <a href="index.html" class="back">⬅ رجوع للصفحة الرئيسية</a>
+
+  <script>
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.5 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
