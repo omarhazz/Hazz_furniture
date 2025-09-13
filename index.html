@@ -11,7 +11,7 @@
       background: linear-gradient(135deg, #000000, #333333);
       color: white;
       overflow-x: hidden;
-      scroll-behavior: smooth;
+      scroll-behavior: smooth; /* يخلي النزول ناعم */
     }
 
     header {
@@ -29,6 +29,10 @@
       color: #f1c40f;
     }
 
+    header p {
+      margin: 5px 0;
+    }
+
     nav {
       margin-top: 10px;
     }
@@ -43,6 +47,25 @@
 
     nav a:hover {
       color: #ffffff;
+    }
+
+    .socials {
+      margin-top: 15px;
+    }
+
+    .socials a {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    .socials img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .socials img:hover {
+      transform: scale(1.2);
     }
 
     .section {
@@ -103,10 +126,20 @@
   <header>
     <h1>حظ للأثاث - Hazz Furniture</h1>
     <p>📞 01069977092 | 01068831118</p>
+
     <nav>
       <a href="#ent">انتريهات</a>
       <a href="#corner">الركن</a>
     </nav>
+
+    <div class="socials">
+      <a href="https://www.facebook.com/share/14QxR5YmLgx/?mibextid=wwXIfr" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+      </a>
+      <a href="https://wa.me/201069977092" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+      </a>
+    </div>
   </header>
 
   <!-- سكشن الانتريهات -->
